@@ -1,5 +1,5 @@
 from tkinter import Button, Label
-import random, settings
+import random, settings, ctypes, sys
 
 class Cell:
     """
@@ -45,12 +45,16 @@ class Cell:
     def left_click_action(self, event):
         if self.is_mine:
             self.show_mine()
+            self.show_GameOver()
         else:
             if self.surrounded_cells_mine_length == 0:
                 for cell_object in self.surrounded_cells:
                     cell_object.show_cell()
             self.show_cell()
         
+    def show_GameOver(self):
+        ctypes.windll.user32.MessageBoxW(0, 'You clicked on a Mine','Game Over!', 1)
+        sys.exit()
 
     def show_mine(self):
         """
