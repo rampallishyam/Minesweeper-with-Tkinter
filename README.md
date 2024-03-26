@@ -7,4 +7,4 @@ Please install all the required modules with the code below.
 pip install requirements.txt
 ```
 
-To run the program, open the main.py and run the file. Enjoy the game. Do comment in case of any confusions. 
+To run the program, open the main.py and run the file. Enjoy the game.
